@@ -1,0 +1,81 @@
+[gd_scene load_steps=12 format=3 uid="uid://sdkpkfjnnty4"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_f4n1d"]
+[ext_resource type="Texture2D" uid="uid://bhrlpg8klc2i2" path="res://art/napo 2.png" id="4_ouufp"]
+[ext_resource type="Texture2D" uid="uid://btc58xqmwuthw" path="res://art/lara 2.png" id="4_rsufn"]
+[ext_resource type="Texture2D" uid="uid://ddn6cced6dfn2" path="res://art/lara 1.png" id="5_f0nrc"]
+[ext_resource type="Texture2D" uid="uid://cuhys4o7xmuih" path="res://art/napo 1.png" id="5_lw3x6"]
+[ext_resource type="Texture2D" uid="uid://cik16d7rwnqv6" path="res://art/napo 8.png" id="7_52ik1"]
+[ext_resource type="Texture2D" uid="uid://cat4elqkveanh" path="res://art/lara 7.png" id="7_k6qax"]
+[ext_resource type="Texture2D" uid="uid://cq2y1cic53vwx" path="res://art/lara 8.png" id="8_4j5jd"]
+[ext_resource type="Texture2D" uid="uid://ccmtyco3gad2d" path="res://art/napo 6.png" id="8_pxj2c"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8oxpo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_lw3x6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ouufp")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_rsufn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_f0nrc")
+}],
+"loop": true,
+"name": &"up2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_pxj2c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_52ik1")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_k6qax")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_4j5jd")
+}],
+"loop": true,
+"name": &"walk2",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j30it"]
+radius = 5.8
+height = 22.0
+
+[node name="Player" type="Area2D"]
+position = Vector2(-3, -9)
+scale = Vector2(5, 5)
+script = ExtResource("1_f4n1d")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(0.327544, 0.330878)
+sprite_frames = SubResource("SpriteFrames_8oxpo")
+animation = &"walk"
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_j30it")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

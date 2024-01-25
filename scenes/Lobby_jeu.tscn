@@ -1,0 +1,59 @@
+[gd_scene load_steps=5 format=3 uid="uid://d0k3j6ifi1chi"]
+
+[ext_resource type="FontFile" uid="uid://bmov84eltiulq" path="res://fonts/Pixeled.ttf" id="1_2jp8c"]
+[ext_resource type="Script" path="res://scenes/Lobby_jeu.gd" id="1_gr5ib"]
+[ext_resource type="Texture2D" uid="uid://cuhys4o7xmuih" path="res://art/napo 1.png" id="2_7h6m2"]
+[ext_resource type="Texture2D" uid="uid://ddn6cced6dfn2" path="res://art/lara 1.png" id="3_d7u6k"]
+
+[node name="Lobby" type="CanvasLayer"]
+script = ExtResource("1_gr5ib")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(11.9857, 18.003)
+color = Color(0.180392, 0.439216, 0.898039, 1)
+
+[node name="Message" type="Label" parent="."]
+offset_left = 120.0
+offset_top = 100.0
+offset_right = 367.0
+offset_bottom = 149.0
+theme_override_fonts/font = ExtResource("1_2jp8c")
+text = "CHOISIS UN JOUEUR !"
+
+[node name="Napoleon" type="Button" parent="."]
+offset_left = 300.0
+offset_top = 600.0
+offset_right = 436.0
+offset_bottom = 654.0
+theme_override_fonts/font = ExtResource("1_2jp8c")
+text = "NAPOLEON"
+
+[node name="LaraCroft" type="Button" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -190.0
+offset_top = -120.0
+offset_right = -28.0
+offset_bottom = -66.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("1_2jp8c")
+text = "LARA CROFT"
+
+[node name="Napo1" type="Sprite2D" parent="."]
+position = Vector2(360, 400)
+scale = Vector2(2.5, 2.525)
+texture = ExtResource("2_7h6m2")
+
+[node name="Lara1" type="Sprite2D" parent="."]
+position = Vector2(130, 400)
+scale = Vector2(3, 3)
+texture = ExtResource("3_d7u6k")
+
+[connection signal="pressed" from="Napoleon" to="." method="_on_napoleon_pressed"]
+[connection signal="pressed" from="LaraCroft" to="." method="_on_lara_croft_pressed"]

@@ -1,0 +1,147 @@
+[gd_scene load_steps=22 format=3 uid="uid://d1woq48rjrarc"]
+
+[ext_resource type="Script" path="res://mob.gd" id="1_hq8hm"]
+[ext_resource type="Texture2D" uid="uid://dinu4ehf8lg2b" path="res://art/v_hj.png" id="2_mrq7v"]
+[ext_resource type="Texture2D" uid="uid://cui57a3jb8on5" path="res://art/hjghf (2).png" id="3_35o2o"]
+[ext_resource type="Texture2D" uid="uid://lvypdkdbln7h" path="res://art/wvdvqsbf.png" id="4_1rqo7"]
+[ext_resource type="Texture2D" uid="uid://chh2qrvaga0" path="res://art/gufyc.png" id="4_muqtb"]
+[ext_resource type="Texture2D" uid="uid://6psqs7n77dxc" path="res://art/dvbfnsg.png" id="5_hnnhy"]
+[ext_resource type="Texture2D" uid="uid://ch50nkeq21flt" path="res://art/hjgvcf.png" id="5_oll4h"]
+[ext_resource type="Texture2D" uid="uid://b2fkjfcue0x33" path="res://art/gfcg.png" id="6_4dtvc"]
+[ext_resource type="Texture2D" uid="uid://cg852o2c2ia54" path="res://art/guh.png" id="6_gjig4"]
+[ext_resource type="Texture2D" uid="uid://d5ohbc1vw3lu" path="res://art/uiyugf.png" id="7_be6ga"]
+[ext_resource type="Texture2D" uid="uid://6lu1jq8ktppo" path="res://art/jhgfhg.png" id="7_xi4gd"]
+[ext_resource type="Texture2D" uid="uid://cauxmnnbgtcev" path="res://art/gh.png" id="8_wp68i"]
+[ext_resource type="Texture2D" uid="uid://dcthvwxahqud2" path="res://art/vbvfbdf.png" id="9_nimlu"]
+[ext_resource type="Texture2D" uid="uid://tn3u7xjhhxm6" path="res://art/hugfhjf.png" id="12_s1p6o"]
+[ext_resource type="Texture2D" uid="uid://bi6l3bvajnbqv" path="res://art/dqsfbg.png" id="12_wng4h"]
+[ext_resource type="Texture2D" uid="uid://cx85jw4wsx706" path="res://art/csdvwfb.png" id="13_5iays"]
+[ext_resource type="Texture2D" uid="uid://b62pvjhl5iywu" path="res://art/iugyuff.png" id="13_45rjj"]
+[ext_resource type="Texture2D" uid="uid://jqoe12dcqvuo" path="res://art/ugyuft.png" id="18_7rm7b"]
+[ext_resource type="Texture2D" uid="uid://dmxmia7ndwah0" path="res://art/bhgcfgh.png" id="19_d0h0a"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4v62a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_mrq7v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_35o2o")
+}],
+"loop": true,
+"name": &"ghost",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_1rqo7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_hnnhy")
+}],
+"loop": true,
+"name": &"ghost2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_gjig4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_be6ga")
+}],
+"loop": true,
+"name": &"ghost3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_muqtb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_oll4h")
+}],
+"loop": true,
+"name": &"skeleton",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_wp68i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_nimlu")
+}],
+"loop": true,
+"name": &"skeleton2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_s1p6o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_45rjj")
+}],
+"loop": true,
+"name": &"skeleton3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_4dtvc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_xi4gd")
+}],
+"loop": true,
+"name": &"slime",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_wng4h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_5iays")
+}],
+"loop": true,
+"name": &"slime2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_7rm7b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_d0h0a")
+}],
+"loop": true,
+"name": &"slime3",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j05pc"]
+radius = 4.6
+height = 15.6
+
+[node name="Mob" type="RigidBody2D"]
+collision_mask = 0
+gravity_scale = 2.66454e-15
+script = ExtResource("1_hq8hm")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_4v62a")
+animation = &"ghost"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_j05pc")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

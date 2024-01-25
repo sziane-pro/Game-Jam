@@ -1,0 +1,59 @@
+[gd_scene load_steps=5 format=3 uid="uid://bvtqufhgqyanh"]
+
+[ext_resource type="Script" path="res://scenes/new_script.gd" id="1_a3fpi"]
+[ext_resource type="FontFile" uid="uid://bmov84eltiulq" path="res://fonts/Pixeled.ttf" id="1_ndhhx"]
+[ext_resource type="Texture2D" uid="uid://cuhys4o7xmuih" path="res://art/napo 1.png" id="2_66pri"]
+[ext_resource type="Texture2D" uid="uid://ddn6cced6dfn2" path="res://art/lara 1.png" id="3_4rjxt"]
+
+[node name="lobby" type="CanvasLayer"]
+script = ExtResource("1_a3fpi")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(11.9353, 17.9301)
+color = Color(0.0862745, 0.564706, 0.662745, 1)
+
+[node name="Message" type="Label" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 150.0
+offset_right = -143.0
+offset_bottom = 202.0
+grow_horizontal = 2
+scale = Vector2(1.40978, 1.13452)
+theme_override_fonts/font = ExtResource("1_ndhhx")
+theme_override_font_sizes/font_size = 17
+text = "CHOISIS TON PERSONNAGE"
+
+[node name="Napo1" type="Sprite2D" parent="."]
+position = Vector2(120, 400)
+scale = Vector2(1.7009, 1.6714)
+texture = ExtResource("2_66pri")
+
+[node name="Lara1" type="Sprite2D" parent="."]
+position = Vector2(360, 400)
+scale = Vector2(2.42083, 1.89172)
+texture = ExtResource("3_4rjxt")
+
+[node name="Btn napoleon" type="Button" parent="."]
+custom_minimum_size = Vector2(2.08165e-12, 2.08165e-12)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -165.0
+offset_top = -220.0
+offset_right = -65.0
+offset_bottom = -189.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "NAPOLEON"
+
+[node name="Btn lara" type="Button" parent="."]
+offset_left = 310.0
+offset_top = 500.0
+offset_right = 413.0
+offset_bottom = 531.0
+text = "LARA CROFT"
